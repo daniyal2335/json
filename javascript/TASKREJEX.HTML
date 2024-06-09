@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <title>regex</title>
+</head>
+
+<body>
+    <div class="container" onsubmit="return false">
+        <form action="">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" name="" id="uName" class="form-control" placeholder="" aria-describedby="helpId">
+                <small id="error"></small>
+                <br>
+                <br>
+                <label for="">Email</label>
+                <input type="text" name="" id="u_Email" class="form-control" placeholder="" aria-describedby="helpId">
+                <small id="error2"></small>
+                <br>
+                <br>
+                <label for="">Age</label>
+                <input type="text" name="" id="uAge" class="form-control" placeholder="" aria-describedby="helpId">
+                <small id="error3"></small>
+                <br>
+                <br>
+                <button class="btn btn-info" onclick="fun()">Submit</button>
+            </div>
+    </div>
+    </form>
+    <script>
+        function fun() {
+            let username = document.querySelector("#uName").value;
+            regex = /[a-z]{3,10}/i;
+            let useremail = document.querySelector("#u_Email").value;
+            regex = /([A-Za-z0-9]{4,7}@[abc]{5}.[abc]{3})/;
+            let userage = document.querySelector("#uAge").value;
+            regex = /[0-9]{3}/d;
+            if (regex.test(username)) {
+                document.querySelector('#error').innerHTML = "valid username";
+            }
+            else {
+                document.querySelector('#error').innerHTML = "Invalid username";
+            }
+            if (regex.test(useremail)) {
+                document.querySelector('#error2').innerHTML = "valid useremail";
+            }
+            else {
+                document.querySelector('#error2').innerHTML = "Invalid useremail";
+            }
+            if (regex.test(userage)) {
+                document.querySelector('#error3').innerHTML = "valid userage";
+            }
+            else {
+                document.querySelector('#error3').innerHTML = "Invalid userage";
+            }
+        }
+    </script>
+</body>
+
+</html>
